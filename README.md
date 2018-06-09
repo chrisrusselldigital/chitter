@@ -1,0 +1,6 @@
+# Chitter
+
+Uses...
+
+- Sinatra
+- PostgreSQL

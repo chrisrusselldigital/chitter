@@ -5,9 +5,16 @@ require './lib/peep'
 
 class Chitter < Sinatra::Base
 
-  get '/' do
+
+  get '/users/new' do
+    erb:"users/new"
+  end
+
+  post '/users' do
+    User.create(email: params['email'], password: params['password'])
     redirect '/peeps'
   end
+
 
   get '/peeps' do
     @peeps = Peep.all

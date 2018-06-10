@@ -1,14 +1,16 @@
+<body style="background-color:powderblue;">
 <center>
-<h1><font face = verdana>Chitter</font></h1>
+<h1><font face = verdana color="Brown">Chitter</font></h1>
 
 <form action="/peeps" method="post">
-  <input type="text" name="peep" /><br/><br/>
-  <input type="submit" value="Submit" />
+  <input type="textarea" name="peep" style="font-size: 18pt; height: 40px; width:280px"/><br/><br/>
+  <input type="submit" value="Submit" style="font-size: 18pt; height: 40px; width:140px"/>
 </form>
 
-<font face = verdana>
+
 <% @peeps.each do |peep| %>
-<p><%= peep %><p/>
+<p><div="peeps"><font face = arial color = black style="font-size: 18pt"><%= peep.peep %><br/></font></div>
+  <div="created_at"><font face = arial color = gray style="font-size: 8pt"><%= peep.created_at %></font></div></p>
 <% end %>
-</font>
 </center>
+</body>

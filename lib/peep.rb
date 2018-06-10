@@ -40,4 +40,6 @@ class Peep
     result = connection.exec("INSERT INTO peeps (peep) VALUES('#{options[:peep]}') RETURNING peep, created_at")
     Peep.new(result.first['peep'], result.first['created_at'])
   end
+
+
 end

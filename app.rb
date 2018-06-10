@@ -17,6 +17,7 @@ class Chitter < Sinatra::Base
 
 
   get '/peeps' do
+    @user = User.find(session[:user_id])
     @peeps = Peep.all
     erb :index
   end

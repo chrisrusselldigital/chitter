@@ -1,3 +1,6 @@
-feature 'I want to post a message (peep) to chitter' do
-  scenario 
+feature 'Posting to Chitter' do
+  scenario 'A user can post messages to chitter' do
+    visit '/'
+    expect(page).to have_content "My first post"
+  end
 end

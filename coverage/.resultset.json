@@ -1,7 +1,15 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/chrisrussell/makers/chitter/spec/features/post_message_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
     },
-    "timestamp": 1528543294
+    "timestamp": 1528543651
   }
 }

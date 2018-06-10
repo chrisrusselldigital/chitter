@@ -8,10 +8,16 @@ describe Peep do
       connection.exec("INSERT INTO peeps (peep) VALUES ('2nd peep!');")
       # setup
       expected_peeps = [
-        'Hello world.',
-        '2nd peep!'
+        '2nd peep!',
+        'Hello world.'
       ]
       expect(Peep.all).to eq expected_peeps
     end
+
+    it 'creates a new peep' do
+      Peep.create(peep: "A new peep.")
+      expect(Peep.all).to include 'A new peep.'
+    end
+
   end
 end

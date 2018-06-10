@@ -1,8 +1,14 @@
+<center>
 <h1><font face = verdana>Chitter</font></h1>
 
+<form action="/peeps" method="post">
+  <input type="text" name="peep" /><br/><br/>
+  <input type="submit" value="Submit" />
+</form>
 
-<ul>
+<font face = verdana>
 <% @peeps.each do |peep| %>
-<li><%= peep %></li>
+<p><%= peep %><p/>
 <% end %>
-</ul>
+</font>
+</center>

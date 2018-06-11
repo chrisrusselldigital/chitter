@@ -35,7 +35,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
-
 # Tell Capybara to talk to Chitter
 Capybara.app = Chitter
 

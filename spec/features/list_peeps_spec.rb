@@ -8,10 +8,9 @@ feature 'View posts' do
     connection.exec("INSERT INTO peeps VALUES(2, '2nd peep!');")
     connection.exec("INSERT INTO peeps VALUES(1, 'Hello world.');")
 
-
     visit '/peeps'
-    expect(page).to have_content "2nd peep!"
-    expect(page).to have_content "Hello world."
+    expect(page).to have_content '2nd peep!'
+    expect(page).to have_content 'Hello world.'
 
   end
 end

@@ -1,7 +1,7 @@
 require 'pg'
 
 class User
-attr_reader :id, :email, :password
+  attr_reader :id, :email, :password
 
   def initialize(id, email, password)
     @id = id
@@ -30,9 +30,8 @@ attr_reader :id, :email, :password
     end
 
     return nil unless id
-    result = DatabaseConnection.query("INSERT INTO users (email, password) VALUES('#{options[:email]}', '#{options[:password]}') RETURNING id, email, password;")
-     User.new(result[0]['id'], result[0]['email'], result[0]['password'])
+    result = connection.query("INSERT INTO users (email, password) VALUES('#{options[:email]}', '#{options[:password]}') RETURNING id, email, password;")
+    User.new(result[0]['id'], result[0]['email'], result[0]['password'])
   end
-
 
 end

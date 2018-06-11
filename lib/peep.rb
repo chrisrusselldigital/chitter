@@ -8,8 +8,8 @@ class Peep
   attr_reader :peep, :created_at
 
   def initialize(peep, created_at)
-   @peep  = peep
-   @created_at = created_at
+    @peep = peep
+    @created_at = created_at
   end
 
   def self.all
@@ -23,7 +23,7 @@ class Peep
     result = connection.exec("SELECT peep, created_at FROM peeps ORDER BY created_at DESC")
 
     # mapping the output
-    result.map  {|peep| peep["peep"]}
+    result.map { |peep| peep['peep'] }
     result.map { |peep| Peep.new(peep['peep'], peep['created_at']) }
   end
 
@@ -38,6 +38,5 @@ class Peep
     result = connection.exec("INSERT INTO peeps (peep) VALUES('#{options[:peep]}') RETURNING peep, created_at")
     Peep.new(result.first['peep'], result.first['created_at'])
   end
-
 
 end

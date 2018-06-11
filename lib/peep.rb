@@ -12,7 +12,6 @@ class Peep
    @created_at = created_at
   end
 
-
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       # Connects to the database
@@ -22,7 +21,6 @@ class Peep
     end
     # SQL to query the database
     result = connection.exec("SELECT peep, created_at FROM peeps ORDER BY created_at DESC")
-    connection.exec("CREATE TABLE users(id SERIAL PRIMARY KEY, email VARCHAR(60), password VARCHAR(140));")
 
     # mapping the output
     result.map  {|peep| peep["peep"]}
